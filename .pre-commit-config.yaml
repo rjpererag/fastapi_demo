@@ -22,4 +22,8 @@ repos:
     rev: v4.0.5
     hooks:
     -   id: pylint
-        args: [--disable=C0114,C0115,C0116] # Desactivamos docstrings obligatorios para empezar rápido
+        args: [
+                    "--rcfile=.pylintrc",         # Archivo de configuración
+                    "--fail-under=9.0",           # ¡Aquí está la magia!
+                    "--msg-template='{path}:{line}:{column}: {msg_id}({symbol}) {msg}'"
+                ]
