@@ -8,7 +8,7 @@ disable=
     C0116, # Missing function docstring
     R0903, # Too few public methods (común en esquemas Pydantic)
     W0613,  # Unused argument (común en dependencias de FastAPI)
-    E501,
+    E501
 
 [REPORTS]
 reports=yes
