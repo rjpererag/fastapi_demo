@@ -1,0 +1,16 @@
+[MASTER]
+ignore=tests,migrations
+
+[MESSAGES CONTROL]
+disable=
+    C0114, # Missing module docstring
+    C0115, # Missing class docstring
+    C0116, # Missing function docstring
+    R0903, # Too few public methods (común en esquemas Pydantic)
+    W0613  # Unused argument (común en dependencias de FastAPI)
+
+[REPORTS]
+reports=yes
+
+[FORMAT]
+max-line-length=88
