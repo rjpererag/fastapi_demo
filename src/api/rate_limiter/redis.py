@@ -5,6 +5,7 @@ from .settings import Settings as RedisSettings
 class RedisService:
     def __init__(self, settings: RedisSettings):
         self.connection = redis.from_url(url=settings.URL, decode_responses=True)
+        self.settings = settings
 
     async def check_rate_limit(
         self, identifier: str, limit: int, window: int = 60

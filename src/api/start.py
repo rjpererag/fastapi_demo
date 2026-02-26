@@ -1,5 +1,6 @@
+import uvicorn
 from fastapi import FastAPI
-from src.payment_cache.rate_limit import RateLimitMiddleware
+from src.api.rate_limiter.rate_limit import RateLimitMiddleware
 
 
 def start_app() -> FastAPI:
@@ -7,3 +8,8 @@ def start_app() -> FastAPI:
     app.add_middleware(RateLimitMiddleware)
 
     return app
+
+
+if __name__ == "__main__":
+    app = start_app()
+    uvicorn.run(app, host="0.0.0.0", port=8000)

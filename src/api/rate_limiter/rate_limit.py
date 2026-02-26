@@ -10,7 +10,7 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         client_ip = request.client.host
 
         is_allowed = await redis_service.check_rate_limit(
-            identifier=client_ip, limit=10
+            identifier=client_ip, limit=redis_service.settings.RATE_LIMIT_PER_MINUTE
         )
 
         if not is_allowed:
